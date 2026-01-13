@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: Documentación Marketing Alterno Odoo
 site_url: https://my-docs.com
 theme:
   name: material
@@ -8,7 +8,11 @@ theme:
   logo: assets/logo.png
   # favicon: assets/favicon.ico
   features:
-    - navigation.footer
+    # - navigation.footer
+    - navigation.sections
+    # - navigation.expand
+    - toc.integrate
+    - content.code.annotate
   palette:
     # Dark Mode
     - scheme: slate
@@ -26,8 +30,35 @@ theme:
       primary: blue
       accent: deep purple
 
+nav:
+  - Inicio: index.md
+  - GESTIÓN DOCUMENTAL: 
+    - Descripción: mkt_documental_management/index.md
+    - Clases:
+      - Affidavit:
+        - Descripción: mkt_documental_management/classes/Affidavit/index.md
+        - Campos: mkt_documental_management/classes/Affidavit/fields.md
+        - Funciones: mkt_documental_management/classes/Affidavit/functions.md
+      - BudgetModify:
+        - Descripción: mkt_documental_management/classes/BudgetModify/index.md
+        - Campos: mkt_documental_management/classes/BudgetModify/fields.md
+        - Funciones: mkt_documental_management/classes/BudgetModify/functions.md
+    - Wizards:
+      - Descripción: mkt_documental_management/wizards/index.md
+      - Wizard 1: mkt_documental_management/wizards/w1.md
+      - Wizard 2: mkt_documental_management/wizards/w2.md
+    - Seguridad:
+      - Descripción: mkt_documental_management/security/index.md
+  - RECLUTAMIENTO:
+    - Descripción: mkt_recruitment/index.md
+
+
+
 markdown_extensions:
   - attr_list
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -46,6 +77,15 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
 
 
 extra:

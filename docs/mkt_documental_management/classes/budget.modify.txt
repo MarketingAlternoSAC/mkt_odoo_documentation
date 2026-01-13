@@ -1,0 +1,189 @@
+14.	Python – Modelo budget.modify.BudgetMmodify
+14.1 Descripción general de la clase
+•	Modelo técnico: budget.modify.
+•	Hereda de mail.thread y mail.activity.mixin, por lo que las modificaciones quedan trazadas y se pueden gestionar actividades.
+•	Uso principal: gestionar modificaciones sobre presupuestos (budget) en tres frentes:
+o	Cambio de ejecutivo de uno o varios presupuestos.
+o	Movimiento de liquidaciones/documentos entre presupuestos.
+o	Cambio de responsable de los presupuestos (con posibilidad de revertir).
+•	Los registros se ordenan desde el más reciente (id desc).
+________________________________________
+14.2 Campos principales de la clase
+•	name: código interno de la modificación; se llena automáticamente con una secuencia (budget.modify) al crear el registro (si está en New).
+•	description: descripción breve de la modificación (obligatoria).
+•	modify_type: tipo de modificación:
+o	executive → cambio de ejecutivo de los presupuestos.
+o	responsible → cambio de responsable de los presupuestos.
+o	move_btwn_budget → mover liquidaciones/detalles entre presupuestos.
+o	executive_revision → marca/revisión ejecutiva especial sobre los presupuestos.
+•	budget_ids: lista de presupuestos afectados por la modificación.
+Campos relacionados con EJECUTIVO
+•	old_executive: usuario que actualmente es ejecutivo de los presupuestos a modificar (dominio limitado por current_executive_ids).
+•	new_executive: nuevo ejecutivo al que se asignarán los presupuestos.
+•	current_executive_ids: conjunto de usuarios que ya figuran como executive_id en algún presupuesto; se calcula en compute_budget_executives.
+•	revision_executive_id: ejecutivo con el que se filtran presupuestos cuando se hace una “revisión ejecutiva”.
+•	executive_revision: marca booleana que se usa para activar el flag responsible_revision en los presupuestos.
+Campos relacionados con PRESUPUESTO origen/destino
+•	old_budget_id: presupuesto origen desde donde se van a mover líneas/liquidaciones.
+•	budget_line_ids: líneas de presupuesto (campo relacionado con old_budget_id.budget_line_ids), usadas como origen de movimiento.
+•	lock_budget_line_ids: otro conjunto de líneas relacionadas (old_budget_id.line_ids), usado para control/visualización (no hay lógica directa en este archivo).
+•	new_budget_id: presupuesto destino al cual se moverán las liquidaciones/detalles.
+Campos relacionados con RESPONSABLE
+•	partner_id: cliente asociado usado para filtrar presupuestos en combinación con el responsable (opcional).
+•	old_responsible: responsable actual de los presupuestos (dominio limitado por current_responsible_ids).
+•	new_responsible: nuevo responsable a asignar a los presupuestos.
+•	current_responsible_ids: conjunto de usuarios que figuran como responsible_id en algún presupuesto; se calcula en compute_budget_responsibles.
+Otros campos de control
+•	state: estado del registro de modificación:
+o	draft → borrador, aún no aplicada.
+o	modified → la acción ya se ejecutó sobre los presupuestos.
+•	is_reverted: indica si esta modificación ya fue revertida mediante un registro nuevo de tipo “reversión”.
+________________________________________
+14.3 Lógica principal (métodos y efectos)
+14.3.1 Revertir cambios de EJECUTIVO
+•	revert_executive_modify(self)
+o	Condiciones: solo actúa si:
+	modify_type == 'executive' y
+	state == 'modified'.
+o	Crea un nuevo registro budget.modify con:
+	La descripción “Revertion of ”.
+	Tipo de modificación executive.
+	Invierte old_executive y new_executive (lo que era nuevo pasa a viejo y viceversa).
+	Copia los budget_ids de la modificación original.
+o	Marca la modificación original como revertida: is_reverted = True.
+o	Llama a new_modify.modify_executive_budget() para aplicar de inmediato la reversión.
+Efecto permanente:
+o	Los presupuestos listados en budget_ids vuelven a tener como executive_id al ejecutivo original.
+________________________________________
+14.3.2 Revisión ejecutiva sobre presupuestos
+•	modify_responsible_revision(self)
+o	Para cada presupuesto en budget_ids:
+	Asigna budget.responsible_revision = self.executive_revision.
+o	Cambia state a 'modified'.
+Efecto permanente:
+o	Marca o desmarca un flag de revisión (responsible_revision) en los presupuestos, según el valor de executive_revision.
+________________________________________
+14.3.3 Onchange del tipo de modificación
+•	_onchange_modify_type(self)
+o	Si modify_type == 'executive':
+	Limpia old_budget_id y new_budget_id.
+o	Si modify_type == 'move_btwn_budget':
+	Limpia old_executive y new_executive.
+o	Para otros tipos:
+	Limpia todos: old_budget_id, new_budget_id, old_executive, new_executive.
+Efecto práctico (solo UI):
+o	Evita que se mezclen parámetros de distintos tipos de modificación:
+	Los campos de ejecutivo no se usan cuando el tipo es “mover entre presupuestos”, y viceversa.
+________________________________________
+14.3.4 Mover liquidaciones/detalles entre presupuestos
+•	modify_settlement_between_budget(self)
+o	Recorre las líneas en self.old_budget_id.budget_line_ids.
+o	Para cada línea settlement donde settlement.remove sea True:
+	Arma un diccionario values con los campos principales de la línea:
+	budget_id
+	documental_settlement_id
+	date
+	document_type
+	document_file
+	document_filename
+	document
+	reason
+	amount
+	settlement_name
+	settlement_detail_id
+	Crea una nueva línea de presupuesto en self.new_budget_id.budget_line_ids con esos valores.
+	Obtiene:
+	settle = settlement.documental_settlement_id (liquidación documental).
+	rq_settle = settle.requirement_id (requerimiento asociado).
+	Actualiza tanto la liquidación como el requerimiento para apuntar al nuevo presupuesto:
+	settle.budget_id = new_budget_id
+	settle.cost_center_id, settle.campaign_id se alinean con los del nuevo presupuesto.
+	rq_settle.budget_id, rq_settle.cost_center_id, rq_settle.campaign_id se alinean también con el nuevo presupuesto.
+	rq_settle.partner_id y rq_settle.year_month_id se copian desde el nuevo presupuesto.
+	Finalmente, elimina la línea original: settlement.unlink().
+o	Al terminar, marca el registro de modificación como state = 'modified'.
+Efecto permanente:
+o	Las líneas marcadas con remove = True se mueven del presupuesto antiguo al nuevo.
+o	Las liquidaciones (documental.settlements) y sus requerimientos quedan re-asignadas al nuevo presupuesto y su configuración (centro de costo, campaña, cliente, periodo).
+o	Las líneas originales en el presupuesto viejo se eliminan.
+________________________________________
+14.3.5 Aplicar cambio de EJECUTIVO
+•	modify_executive_budget(self)
+o	Para cada presupuesto en budget_ids:
+	Asigna budget.executive_id = self.new_executive.
+o	Cambia state a 'modified'.
+Efecto permanente:
+o	Todos los presupuestos seleccionados pasan a tener un nuevo ejecutivo.
+________________________________________
+14.3.6 Autollenado de presupuestos por EJECUTIVO
+•	onchange_budgets(self) (@api.onchange('old_executive','modify_type','revision_executive_id'))
+o	Si old_executive está definido:
+	Busca todos los presupuestos con executive_id = old_executive y asigna sus ids en budget_ids.
+o	Si revision_executive_id está definido:
+	Hace lo mismo pero usando revision_executive_id como filtro.
+Efecto práctico (UI):
+o	Al seleccionar un ejecutivo (viejo o de revisión), se rellena automáticamente la lista de presupuestos sobre los que se trabajará.
+________________________________________
+14.3.7 Cálculo de ejecutivos disponibles
+•	compute_budget_executives(self) (@api.depends('description','modify_type','budget_ids','old_executive'))
+o	Si hay datos en description, modify_type, budget_ids o old_executive:
+	Busca todos los presupuestos con executive_id no vacío.
+	Toma los usuarios executive_id y los asigna a current_executive_ids.
+o	En caso contrario:
+	Limpia current_executive_ids.
+Efecto práctico:
+o	Define el conjunto de ejecutivos disponibles para el dominio de old_executive.
+________________________________________
+14.3.8 Autollenar presupuestos por RESPONSABLE (filtrado por cliente)
+•	_onchange_responsible_customer_fill_budgets(self) (@api.onchange('old_responsible', 'partner_id'))
+o	Para cada registro:
+	Siempre limpia budget_ids primero.
+	Si no hay old_responsible, no hace nada más.
+	Arma un dominio base: presupuestos con responsible_id = old_responsible.
+	Si además hay partner_id, agrega al dominio ('partner_id', '=', partner_id).
+	Busca los presupuestos que cumplen ese dominio y asigna sus ids a budget_ids.
+Efecto práctico (UI):
+o	Al elegir un responsable (y opcionalmente un cliente), se llenan automáticamente los presupuestos que están a cargo de ese responsable y cliente.
+________________________________________
+14.3.9 Creación con secuencia
+•	create(self, vals) (@api.model)
+o	Si vals['name'] viene como 'New':
+	Reemplaza name con el valor de la secuencia budget.modify.
+o	Llama al super para crear el registro.
+Efecto permanente:
+o	Garantiza que todas las modificaciones tengan un código único autogenerado.
+________________________________________
+14.3.10 Aplicar cambio de RESPONSABLE
+•	modify_responsible_budget(self)
+o	Para cada registro rec:
+	Para cada presupuesto en rec.budget_ids:
+	Asigna budget.responsible_id = rec.new_responsible.
+	Marca rec.state = 'modified'.
+Efecto permanente:
+o	Todos los presupuestos seleccionados pasan a tener un nuevo responsable.
+________________________________________
+14.3.11 Revertir cambio de RESPONSABLE
+•	revert_responsible_modify(self)
+o	Para cada rec:
+	Si state == 'modified' y existen new_responsible y old_responsible:
+	Crea un nuevo budget.modify con:
+	Descripción: “Revertion of ”.
+	modify_type: se mantiene el mismo tipo original.
+	old_responsible: toma el nuevo responsable de la modificación original.
+	new_responsible: toma el responsable anterior.
+	partner_id: copia el cliente si existe.
+	budget_ids: copia los mismos presupuestos (con comando M2M (4, id)).
+	Marca el registro original como is_reverted = True.
+	Llama a new_modify.modify_responsible_budget() para aplicar la reversión.
+Efecto permanente:
+o	Los presupuestos recuperan el responsable anterior, quedando trazada la reversión en un nuevo registro budget.modify.
+________________________________________
+14.3.12 Cálculo de responsables disponibles
+•	compute_budget_responsibles(self) (@api.depends('description','modify_type','budget_ids','old_responsible'))
+o	Obtiene todos los presupuestos con responsible_id definido.
+o	Mapea esos responsible_id a un conjunto de usuarios.
+o	Para cada registro:
+	Asigna ese conjunto a current_responsible_ids.
+	Si no hubiera ninguno, asigna todos los usuarios (self.env['res.users']) como fallback.
+Efecto práctico:
+o	Define el conjunto de usuarios que se usan en el dominio de old_responsible, basados en quienes ya son responsables de algún presupuesto.
