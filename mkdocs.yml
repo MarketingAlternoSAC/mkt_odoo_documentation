@@ -17,17 +17,17 @@ theme:
     # Dark Mode
     - scheme: slate
       toggle:
-        icon: material/weather-sunny
+        icon: material/eye-outline
         name: Dark mode
-      primary: green
+      primary: blue grey
       accent: deep purple
 
     # Light Mode
     - scheme: default
       toggle:
-        icon: material/weather-night
+        icon: material/eye
         name: Light mode
-      primary: blue
+      primary: red
       accent: deep purple
 
 nav:
