@@ -1,0 +1,1885 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://my-docs.com/mkt_documental_management/classes/BudgetModify/functions/">
+      
+      
+        <link rel="prev" href="../fields/">
+      
+      
+        <link rel="next" href="../../../wizards/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Funciones - Documentación Marketing Alterno Odoo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Merriweather Sans";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#generales" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Documentación Marketing Alterno Odoo" class="md-header__button md-logo" aria-label="Documentación Marketing Alterno Odoo" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentación Marketing Alterno Odoo
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Funciones
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0 9.821 9.821 0 0 0-17.64 0"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="deep-purple"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Documentación Marketing Alterno Odoo" class="md-nav__button md-logo" aria-label="Documentación Marketing Alterno Odoo" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    Documentación Marketing Alterno Odoo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GESTIÓN DOCUMENTAL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GESTIÓN DOCUMENTAL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Clases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Affidavit
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Affidavit
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Affidavit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Affidavit/fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Campos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Affidavit/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BudgetModify
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BudgetModify
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Campos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funciones
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Generales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createself-vals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        create(self, vals)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify_executive_budgetself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        modify_executive_budget(self)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revert_executive_modifyself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        revert_executive_modify(self)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify_responsible_budgetself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        modify_responsible_budget(self)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revert_responsible_modifyself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        revert_responsible_modify(self)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify_responsible_revisionself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        modify_responsible_revision(self)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modify_settlement_between_budgetself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        modify_settlement_between_budget(self)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OnChange
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OnChange">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_onchange_modify_typeself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _onchange_modify_type(self)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onchange_budgetsself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onchange_budgets(self)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_onchange_responsible_customer_fill_budgetsself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        _onchange_responsible_customer_fill_budgets(self)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compute_budget_executivesself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compute_budget_executives(self)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute_budget_responsiblesself" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compute_budget_responsibles(self)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wizards
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wizards
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wizards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wizards/w1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wizard 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wizards/w2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wizard 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seguridad
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Seguridad
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RECLUTAMIENTO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RECLUTAMIENTO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mkt_recruitment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CENTRO DE COSTO
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CENTRO DE COSTO
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Clases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_1" id="__nav_4_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CostCenter
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CostCenter
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mkt_cost_center/classes/CostCenter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mkt_cost_center/classes/CostCenter/fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Campos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mkt_cost_center/classes/CostCenter/functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Funciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seguridad
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Seguridad
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../mkt_cost_center/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Funciones</h1>
+
+<h2 id="generales"><ins>Generales</ins></h2>
+<h3 id="createself-vals"><code>create(self, vals)</code></h3>
+<p>Decorador: <code>@api.model</code></p>
+<ul>
+<li>Si <code>vals['name']</code> viene como <code>'New'</code>:<ul>
+<li>Reemplaza <code>name</code> con el valor de la secuencia <code>budget.modify</code>.</li>
+</ul>
+</li>
+<li>Llama al <code>super</code> para crear el registro.</li>
+</ul>
+<p><strong>Efecto:</strong><br />
+Garantiza que todas las modificaciones tengan un código único autogenerado.</p>
+<h3 id="modify_executive_budgetself"><code>modify_executive_budget(self)</code></h3>
+<ul>
+<li>Para cada presupuesto en <code>budget_ids</code>:<ul>
+<li>Asigna <code>budget.executive_id = self.new_executive</code>.</li>
+</ul>
+</li>
+<li>Cambia <code>state</code> a <code>'modified'</code>.</li>
+</ul>
+<p><strong>Efecto:</strong><br />
+Todos los presupuestos seleccionados pasan a tener un nuevo ejecutivo.</p>
+<h3 id="revert_executive_modifyself"><code>revert_executive_modify(self)</code></h3>
+<ul>
+<li>Condiciones: solo actúa si:<ul>
+<li><code>modify_type == 'executive'</code> y</li>
+<li><code>state == 'modified'</code>.</li>
+</ul>
+</li>
+<li>Crea un nuevo registro <code>budget.modify</code> con:<ul>
+<li>La descripción <code>"Revertion of "</code>.</li>
+<li>Tipo de modificación <code>executive</code>.</li>
+<li>Invierte <code>old_executive</code> y <code>new_executive</code> (lo que era nuevo pasa a viejo y viceversa).</li>
+<li>Copia los <code>budget_ids</code> de la modificación original.</li>
+</ul>
+</li>
+<li>Marca la modificación original como revertida: <code>is_reverted = True</code>.</li>
+<li>Llama a <code>new_modify.modify_executive_budget()</code> para aplicar de inmediato la reversión.</li>
+</ul>
+<p><strong>Efecto:</strong><br />
+Los presupuestos listados en <code>budget_ids</code> vuelven a tener como <code>executive_id</code> al ejecutivo original.</p>
+<h3 id="modify_responsible_budgetself"><code>modify_responsible_budget(self)</code></h3>
+<ul>
+<li>Para cada registro <code>rec</code>:<ul>
+<li>Para cada presupuesto en <code>rec.budget_ids</code>:<ul>
+<li>Asigna <code>budget.responsible_id = rec.new_responsible</code>.</li>
+</ul>
+</li>
+<li>Marca <code>rec.state = 'modified'</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Efecto:</strong><br />
+Todos los presupuestos seleccionados pasan a tener un nuevo responsable.</p>
+<h3 id="revert_responsible_modifyself"><code>revert_responsible_modify(self)</code></h3>
+<ul>
+<li>Para cada <code>rec</code>:<ul>
+<li>Si <code>state == 'modified'</code> y existen <code>new_responsible</code> y <code>old_responsible</code>:<ul>
+<li>Crea un nuevo <code>budget.modify</code> con:<ul>
+<li>Descripción: <code>"Revertion of "</code>.</li>
+<li><code>modify_type</code>: se mantiene el mismo tipo original.</li>
+<li><code>old_responsible</code>: toma el nuevo responsable de la modificación original.</li>
+<li><code>new_responsible</code>: toma el responsable anterior.</li>
+<li><code>partner_id</code>: copia el cliente si existe.</li>
+<li><code>budget_ids</code>: copia los mismos presupuestos (con comando M2M <code>(4, id)</code>).</li>
+</ul>
+</li>
+<li>Marca el registro original como <code>is_reverted = True</code>.</li>
+<li>Llama a <code>new_modify.modify_responsible_budget()</code> para aplicar la reversión.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Efecto:</strong><br />
+Los presupuestos recuperan el responsable anterior, quedando trazada la reversión en un nuevo registro <code>budget.modify</code>.</p>
+<h3 id="modify_responsible_revisionself"><code>modify_responsible_revision(self)</code></h3>
+<ul>
+<li>Para cada presupuesto en <code>budget_ids</code>:<ul>
+<li>Asigna <code>budget.responsible_revision = self.executive_revision</code>.</li>
+</ul>
+</li>
+<li>Cambia <code>state</code> a <code>'modified'</code>.</li>
+</ul>
+<p><strong>Efecto:</strong><br />
+Marca o desmarca un flag de revisión (<code>responsible_revision</code>) en los presupuestos, según el valor de <code>executive_revision</code>.</p>
+<h3 id="modify_settlement_between_budgetself"><code>modify_settlement_between_budget(self)</code></h3>
+<ul>
+<li>Recorre las líneas en <code>self.old_budget_id.budget_line_ids</code>.</li>
+<li>Para cada línea <code>settlement</code> donde <code>settlement.remove</code> sea <code>True</code>:<ul>
+<li>Arma un diccionario <code>values</code> con los campos principales de la línea:<ul>
+<li><code>budget_id</code></li>
+<li><code>documental_settlement_id</code></li>
+<li><code>date</code></li>
+<li><code>document_type</code></li>
+<li><code>document_file</code></li>
+<li><code>document_filename</code></li>
+<li><code>document</code></li>
+<li><code>reason</code></li>
+<li><code>amount</code></li>
+<li><code>settlement_name</code></li>
+<li><code>settlement_detail_id</code></li>
+</ul>
+</li>
+<li>Crea una nueva línea de presupuesto en <code>self.new_budget_id.budget_line_ids</code> con esos valores.</li>
+<li>Obtiene:<ul>
+<li><code>settle = settlement.documental_settlement_id</code> (liquidación documental).</li>
+<li><code>rq_settle = settle.requirement_id</code> (requerimiento asociado).</li>
+</ul>
+</li>
+<li>Actualiza tanto la liquidación como el requerimiento para apuntar al nuevo presupuesto:<ul>
+<li><code>settle.budget_id = new_budget_id</code></li>
+<li><code>settle.cost_center_id</code>, <code>settle.campaign_id</code> se alinean con los del nuevo presupuesto.</li>
+<li><code>rq_settle.budget_id</code>, <code>rq_settle.cost_center_id</code>, <code>rq_settle.campaign_id</code> se alinean también con el nuevo presupuesto.</li>
+<li><code>rq_settle.partner_id</code> y <code>rq_settle.year_month_id</code> se copian desde el nuevo presupuesto.</li>
+</ul>
+</li>
+<li>Finalmente, elimina la línea original: <code>settlement.unlink()</code>.</li>
+</ul>
+</li>
+<li>Al terminar, marca el registro de modificación como <code>state = 'modified'</code>.</li>
+</ul>
+<p><strong>Efecto:</strong></p>
+<ul>
+<li>Las líneas marcadas con <code>remove = True</code> se mueven del presupuesto antiguo al nuevo.</li>
+<li>Las liquidaciones (<code>documental.settlements</code>) y sus requerimientos quedan re-asignadas al nuevo presupuesto y su configuración (centro de costo, campaña, cliente, periodo).</li>
+<li>Las líneas originales en el presupuesto viejo se eliminan.</li>
+</ul>
+<hr />
+<h2 id="onchange"><ins>OnChange</ins></h2>
+<h3 id="_onchange_modify_typeself"><code>_onchange_modify_type(self)</code></h3>
+<ul>
+<li>Si <code>modify_type == 'executive'</code>:<ul>
+<li>Limpia <code>old_budget_id</code> y <code>new_budget_id</code>.</li>
+</ul>
+</li>
+<li>Si <code>modify_type == 'move_btwn_budget'</code>:<ul>
+<li>Limpia <code>old_executive</code> y <code>new_executive</code>.</li>
+</ul>
+</li>
+<li>Para otros tipos:<ul>
+<li>Limpia todos: <code>old_budget_id</code>, <code>new_budget_id</code>, <code>old_executive</code>, <code>new_executive</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Efecto:</strong><br />
+Evita que se mezclen parámetros de distintos tipos de modificación. Los campos de ejecutivo no se usan cuando el tipo es "mover entre presupuestos", y viceversa.</p>
+<h3 id="onchange_budgetsself"><code>onchange_budgets(self)</code></h3>
+<p>Decorador: <code>@api.onchange('old_executive', 'modify_type', 'revision_executive_id')</code></p>
+<ul>
+<li>Si <code>old_executive</code> está definido:<ul>
+<li>Busca todos los presupuestos con <code>executive_id = old_executive</code> y asigna sus ids en <code>budget_ids</code>.</li>
+</ul>
+</li>
+<li>Si <code>revision_executive_id</code> está definido:<ul>
+<li>Hace lo mismo pero usando <code>revision_executive_id</code> como filtro.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Efecto:</strong><br />
+Al seleccionar un ejecutivo (viejo o de revisión), se rellena automáticamente la lista de presupuestos sobre los que se trabajará.</p>
+<h3 id="_onchange_responsible_customer_fill_budgetsself"><code>_onchange_responsible_customer_fill_budgets(self)</code></h3>
+<p>Decorador: <code>@api.onchange('old_responsible', 'partner_id')</code></p>
+<ul>
+<li>Para cada registro:<ul>
+<li>Siempre limpia <code>budget_ids</code> primero.</li>
+<li>Si no hay <code>old_responsible</code>, no hace nada más.</li>
+<li>Arma un dominio base: presupuestos con <code>responsible_id = old_responsible</code>.</li>
+<li>Si además hay <code>partner_id</code>, agrega al dominio <code>('partner_id', '=', partner_id)</code>.</li>
+<li>Busca los presupuestos que cumplen ese dominio y asigna sus ids a <code>budget_ids</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Efecto:</strong><br />
+Al elegir un responsable (y opcionalmente un cliente), se llenan automáticamente los presupuestos que están a cargo de ese responsable y cliente.</p>
+<hr />
+<h2 id="computadas"><ins>Computadas</ins></h2>
+<h3 id="compute_budget_executivesself"><code>compute_budget_executives(self)</code></h3>
+<p>Decorador: <code>@api.depends('description', 'modify_type', 'budget_ids', 'old_executive')</code></p>
+<ul>
+<li>Si hay datos en <code>description</code>, <code>modify_type</code>, <code>budget_ids</code> o <code>old_executive</code>:<ul>
+<li>Busca todos los presupuestos con <code>executive_id</code> no vacío.</li>
+<li>Toma los usuarios <code>executive_id</code> y los asigna a <code>current_executive_ids</code>.</li>
+</ul>
+</li>
+<li>En caso contrario:<ul>
+<li>Limpia <code>current_executive_ids</code>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Efecto:</strong><br />
+Define el conjunto de ejecutivos disponibles para el dominio de <code>old_executive</code>.</p>
+<h3 id="compute_budget_responsiblesself"><code>compute_budget_responsibles(self)</code></h3>
+<p>Decorador: <code>@api.depends('description', 'modify_type', 'budget_ids', 'old_responsible')</code></p>
+<ul>
+<li>Obtiene todos los presupuestos con <code>responsible_id</code> definido.</li>
+<li>Mapea esos <code>responsible_id</code> a un conjunto de usuarios.</li>
+<li>Para cada registro:<ul>
+<li>Asigna ese conjunto a <code>current_responsible_ids</code>.</li>
+<li>Si no hubiera ninguno, asigna todos los usuarios (<code>self.env['res.users']</code>) como fallback.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Efecto:</strong><br />
+Define el conjunto de usuarios que se usan en el dominio de <code>old_responsible</code>, basados en quienes ya son responsables de algún presupuesto.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 James Willett
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://youtube.com/@james-willett" target="_blank" rel="noopener" title="youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/willettjames" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "toc.integrate", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="../../../../javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>
