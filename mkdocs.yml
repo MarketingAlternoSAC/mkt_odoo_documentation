@@ -32,27 +32,33 @@ theme:
 
 nav:
   - Inicio: index.md
-  - GESTIÓN DOCUMENTAL: 
-    - Descripción: mkt_documental_management/index.md
-    - Clases:
-      - Affidavit:
-        - Descripción: mkt_documental_management/classes/Affidavit/index.md
-        - Campos: mkt_documental_management/classes/Affidavit/fields.md
-        - Funciones: mkt_documental_management/classes/Affidavit/functions.md
-      - BudgetModify:
-        - Descripción: mkt_documental_management/classes/BudgetModify/index.md
-        - Campos: mkt_documental_management/classes/BudgetModify/fields.md
-        - Funciones: mkt_documental_management/classes/BudgetModify/functions.md
-    - Wizards:
-      - Descripción: mkt_documental_management/wizards/index.md
-      - Wizard 1: mkt_documental_management/wizards/w1.md
-      - Wizard 2: mkt_documental_management/wizards/w2.md
-    - Seguridad:
-      - Descripción: mkt_documental_management/security/index.md
+  - GESTIÓN DOCUMENTAL:
+      - Descripción: mkt_documental_management/index.md
+      - Clases:
+          - Affidavit:
+              - Descripción: mkt_documental_management/classes/Affidavit/index.md
+              - Campos: mkt_documental_management/classes/Affidavit/fields.md
+              - Funciones: mkt_documental_management/classes/Affidavit/functions.md
+          - BudgetModify:
+              - Descripción: mkt_documental_management/classes/BudgetModify/index.md
+              - Campos: mkt_documental_management/classes/BudgetModify/fields.md
+              - Funciones: mkt_documental_management/classes/BudgetModify/functions.md
+      - Wizards:
+          - Descripción: mkt_documental_management/wizards/index.md
+          - Wizard 1: mkt_documental_management/wizards/w1.md
+          - Wizard 2: mkt_documental_management/wizards/w2.md
+      - Seguridad:
+          - Descripción: mkt_documental_management/security/index.md
   - RECLUTAMIENTO:
-    - Descripción: mkt_recruitment/index.md
-
-
+      - Descripción: mkt_recruitment/index.md
+  - CENTRO DE COSTO:
+      - Clases:
+          - CostCenter:
+              - Descripción: mkt_cost_center/classes/CostCenter/index.md
+              - Campos: mkt_cost_center/classes/CostCenter/fields.md
+              - Funciones: mkt_cost_center/classes/CostCenter/functions.md
+      - Seguridad:
+          - Descripción: mkt_cost_center/security/index.md
 
 markdown_extensions:
   - attr_list
@@ -86,7 +92,6 @@ markdown_extensions:
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - javascripts/tablesort.js
-
 
 extra:
   social:
