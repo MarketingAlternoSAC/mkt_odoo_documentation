@@ -2,13 +2,13 @@
 
 Este módulo define categorías y grupos de seguridad específicos para gestionar requisitos, liquidaciones, movilidad y presupuesto.
 
-## 📂 Documental Requirement
+## Documental Requirement
 
-### 👥 <u>User</u>
+### <u>User</u>
 
 (`documental_requirement_user`)
 
-<strong> 🔐 Accesos</strong>
+<strong> Accesos</strong>
 
 (ir.model.access)
 
@@ -17,7 +17,7 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | `access_requirement_user`           | `access.documental.requirements`    | `documental.requirements` | ✅ ✅ ✅ ❌        |
 | `access_internal_announcement_user` | `Internal Announcement - Read Only` | `internal.announcement`   | ✅ ❌ ❌ ❌        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong> Reglas de Registro </strong>
 
 (Record Rules)
 
@@ -32,18 +32,14 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
     ('refund_employee_id.parent_id.user_id','=',user.id)
 ]
 ```
-
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
-
 <br/>
 <hr style="border: 2px solid #333; margin: 2rem 0;">
-<br/>
 
-### 👥 <u>External Control</u>
+### <u>External Control</u>
 
 (`documental_requirement_external_control`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -51,7 +47,7 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | :------------------------------------ | :------------------------------- | :------------------------ | :----------------- |
 | `access_requirement_external_control` | `access.documental.requirements` | `documental.requirements` | ✅ ❌ ❌ ❌        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong>Reglas de Registro </strong>
 
 (Record Rules)
 
@@ -67,17 +63,14 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 ]
 ```
 
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
-
 <br/>
 <hr style="border: 2px solid #333; margin: 2rem 0;">
-<br/>
 
-### 👥 <u>Boss</u>
+### <u>Boss</u>
 
 (`documental_requirement_boss`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -85,7 +78,7 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | :------------------------ | :------------------------------- | :------------------------ | :----------------- |
 | `access_requirement_boss` | `access.documental.requirements` | `documental.requirements` | ✅ ✅ ❌ ❌        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong>Reglas de Registro </strong>
 
 (Record Rules)
 
@@ -102,17 +95,14 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 ]
 ```
 
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
-
 <br/>
 <hr style="border: 2px solid #333; margin: 2rem 0;">
-<br/>
 
-### 👥 <u>Budget Executive</u>
+### <u>Budget Executive</u>
 
 (`documental_requirement_budget_executive`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -120,7 +110,7 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | :------------------------------------ | :------------------------------- | :------------------------ | :----------------- |
 | `access_requirement_budget_executive` | `access.documental.requirements` | `documental.requirements` | ✅ ✅ ❌ ❌        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong>Reglas de Registro </strong>
 
 (Record Rules)
 
@@ -130,17 +120,14 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 [('budget_id.responsible_id','=',user.id)]
 ```
 
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
-
 <br/>
 <hr style="border: 2px solid #333; margin: 2rem 0;">
-<br/>
 
-### 👥 <u>Intern Control</u>
+### <u>Intern Control</u>
 
 (`documental_requirement_intern_control`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -148,7 +135,7 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | :---------------------------------- | :------------------------------- | :------------------------ | :----------------- |
 | `access_requirement_intern_control` | `access.documental.requirements` | `documental.requirements` | ✅ ✅ ❌ ❌        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong>Reglas de Registro </strong>
 
 (Record Rules)
 
@@ -158,17 +145,14 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 [(1,'=',1)]
 ```
 
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
-
 <br/>
 <hr style="border: 2px solid #333; margin: 2rem 0;">
-<br/>
 
-### 👥 <u>Intern Control only read</u>
+### <u>Intern Control only read</u>
 
 (`documental_requirement_intern_control_read`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -176,7 +160,7 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | :-------------------------------------------- | :------------------------------- | :------------------------ | :----------------- |
 | `access_requirement_intern_control_read_only` | `access.documental.requirements` | `documental.requirements` | ✅ ❌ ❌ ❌        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong>Reglas de Registro </strong>
 
 (Record Rules)
 
@@ -186,17 +170,14 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 [(1,'=',1)]
 ```
 
-- **Permisos:** 👁️ Leer | 🚫 Escribir | 🚫 Crear | 🚫 Eliminar
-
 <br/>
 <hr style="border: 2px solid #333; margin: 2rem 0;">
-<br/>
 
-### 👥 <u>Admin</u>
+### <u>Admin</u>
 
 (`documental_requirement_admin`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -205,24 +186,22 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | `access_requirement_admin`           | `access.documental.requirements` | `documental.requirements` | ✅ ✅ ✅ ❌        |
 | `access_internal_announcement_admin` | `Internal Announcement - Admin`  | `internal.announcement`   | ✅ ✅ ✅ ✅        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong>Reglas de Registro </strong>
 
 (Record Rules)
 
 `show_all_requirement_admin_rule`
 
 - **Dominio:** (Sin restricciones explícitas aparte de acceso global)
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
 
 <br/>
 <hr style="border: 2px solid #333; margin: 2rem 0;">
-<br/>
 
-### 👥 <u>Administration</u>
+### <u>Administration</u>
 
 (`documental_requirement_administration`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -230,7 +209,7 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | :---------------------------------- | :------------------------------- | :------------------------ | :----------------- |
 | `access_requirement_administration` | `access.documental.requirements` | `documental.requirements` | ✅ ✅ ❌ ❌        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong>Reglas de Registro </strong>
 
 (Record Rules)
 
@@ -240,17 +219,15 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 [(1,'=',1)]
 ```
 
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
-
 ---
 
-## 📂 Documental Settlement
+## Documental Settlement
 
-### 👥 <u>User</u>
+### <u>User</u>
 
 (`documental_settlement_user`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -268,17 +245,14 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 ['|',('create_uid','=',user.id),('employee_id.parent_id.user_id','=',user.id)]
 ```
 
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
-
 <br/>
 <hr style="border: 2px solid #333; margin: 2rem 0;">
-<br/>
 
-### 👥 <u>Boss</u>
+### <u>Boss</u>
 
 (`documental_settlement_boss`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -286,7 +260,7 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | :----------------------- | :------------------------------ | :----------------------- | :----------------- |
 | `access_settlement_boss` | `access.documental.settlements` | `documental.settlements` | ✅ ✅ ❌ ❌        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong>Reglas de Registro </strong>
 
 (Record Rules)
 
@@ -296,17 +270,14 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 ['|',('create_uid','=',user.id),('employee_id.parent_id.user_id','=',user.id)]
 ```
 
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
-
 <br/>
 <hr style="border: 2px solid #333; margin: 2rem 0;">
-<br/>
 
-### 👥 <u>Intern Control</u>
+### <u>Intern Control</u>
 
 (`documental_settlement_intern_control`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -314,7 +285,7 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | :--------------------------------- | :------------------------------ | :----------------------- | :----------------- |
 | `access_settlement_intern_control` | `access.documental.settlements` | `documental.settlements` | ✅ ✅ ❌ ❌        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong>Reglas de Registro </strong>
 
 (Record Rules)
 
@@ -324,17 +295,14 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 [('is_boss_signed','=',True)]
 ```
 
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
-
 <br/>
 <hr style="border: 2px solid #333; margin: 2rem 0;">
-<br/>
 
-### 👥 <u>Administration (`documental_settlement_administration`) y Accounting</u>
+### <u>Administration (`documental_settlement_administration`) y Accounting</u>
 
 (`documental_settlement_accounting`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -344,7 +312,7 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | `access_settlement_accounting`            | `access.documental.settlements`      | `documental.settlements` | ✅ ✅ ❌ ❌        |
 | `access_internal_announcement_accounting` | `Internal Announcement - Accounting` | `internal.announcement`  | ✅ ✅ ✅ ✅        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong>Reglas de Registro </strong>
 
 (Record Rules)
 
@@ -354,17 +322,14 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 [(1,'=',1)]
 ```
 
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
-
 <br/>
 <hr style="border: 2px solid #333; margin: 2rem 0;">
-<br/>
 
-### 👥 <u>Admin</u>
+### <u>Admin</u>
 
 (`documental_settlement_admin`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -372,24 +337,22 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | :------------------------ | :------------------------------ | :----------------------- | :----------------- |
 | `access_settlement_admin` | `access.documental.settlements` | `documental.settlements` | ✅ ✅ ✅ ❌        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong>Reglas de Registro </strong>
 
 (Record Rules)
 
 **Show all settlement** (`show_all_settlement_admin_rule`)
 
 - **Dominio:** (Acceso Total)
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
-
 ---
 
-## 📂 Documental Mobility
+## Documental Mobility
 
-### 👥 <u>User</u>
+### <u>User</u>
 
 (`documental_mobility_user`)
 
-<strong> 🔐 Accesos</strong>
+<strong> Accesos</strong>
 
 (ir.model.access)
 
@@ -397,7 +360,7 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | :--------------------- | :-------------------------------------- | :------------------------------- | :----------------- |
 | `access_mobility_user` | `access.documental.mobility.expediture` | `documental.mobility.expediture` | ✅ ✅ ✅ ❌        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong> Reglas de Registro </strong>
 
 (Record Rules)
 
@@ -407,17 +370,14 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 [('create_uid','=',user.id)]
 ```
 
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
-
 <br/>
 <hr style="border: 2px solid #333; margin: 2rem 0;">
-<br/>
 
-### 👥 <u>Boss</u>
+### <u>Boss</u>
 
 (`documental_mobility_boss`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -425,7 +385,7 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 | :--------------------- | :-------------------------------------- | :------------------------------- | :----------------- |
 | `access_mobility_boss` | `access.documental.mobility.expediture` | `documental.mobility.expediture` | ✅ ✅ ✅ ❌        |
 
-<strong> 📜 Reglas de Registro </strong>
+<strong> Reglas de Registro </strong>
 
 (Record Rules)
 
@@ -439,17 +399,15 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 ]
 ```
 
-- **Permisos:** 👁️ Leer | ✏️ Escribir | ➕ Crear | 🗑️ Eliminar
-
 ---
 
-## 📂 Budget Control
+## Budget Control
 
-### 👥 <u>User</u>
+### <u>User</u>
 
 (`budget_control_user`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -459,13 +417,12 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 
 <br/>
 <hr style="border: 2px solid #333; margin: 2rem 0;">
-<br/>
 
-### 👥 <u>Administrator</u>
+### <u>Administrator</u>
 
 (`budget_control_administrator`)
 
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
@@ -475,13 +432,9 @@ Este módulo define categorías y grupos de seguridad específicos para gestiona
 
 ---
 
-<strong> 🔐 Accesos</strong>
+### <u>Todos los usuarios</u>
 
-### 👥 <u>Todos lo</u>
-
-s usuarios
-
-<strong> 🔐 Accesos</strong>
+<strong>Accesos</strong>
 
 (ir.model.access)
 
