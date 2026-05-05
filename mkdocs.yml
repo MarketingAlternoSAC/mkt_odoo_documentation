@@ -64,7 +64,7 @@ nav:
       - Clases:
           - Documental Requirements:
               - Descripción: mkt_ocr/classes/DocumentalRequirementsInherit/index.md
-              - Campos: mkt_ocr/classes/DocumentalRequirementsInherit/fields.md
+              - funciones: mkt_ocr/classes/DocumentalRequirementsInherit/functions.md
           - Log OCR:
               - Descripción: mkt_ocr/classes/LogOcr/index.md
               - Campos: mkt_ocr/classes/LogOcr/fields.md
