@@ -6,7 +6,6 @@ Este modelo hereda del modelo existente `settlement` para agregar la funcionalid
 
 ### Funcionalidades Clave
 
-- **Activación Inteligente:** El botón de OCR solo se hace visible y operable cuando la liquidación alcanza un estado específico ("En Espera de Pago").
 - **Orquestación del Flujo OCR:**
   1. **Extracción y Compresión:** Extrae los documentos adjuntos (imágenes/PDF) y los convierte a una cadena codificada en Base64.
   2. **Llamada al Servicio Externo:** Se comunica con un servicio externo (API) para procesar el archivo.
