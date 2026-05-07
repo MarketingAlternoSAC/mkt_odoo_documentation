@@ -32,12 +32,25 @@ Garantiza que fechas ilegibles, caracteres extraños o formatos poco comunes det
 
 ### `formatInvoiceNumber(numero)` {#format-invoice-number}
 
-- **Validación de Serie:** Evalúa si el número de comprobante contiene el separador estándar (`-`). Si no lo tiene, retorna el número original sin alteración.
-- **Formateo de Secciones:**
-    - Divide la cadena utilizando el guion como delimitador.
-    - A la primera sección (la serie) le aplica un `ljust(4, "0")` para asegurar un ancho constante.
-    - A la última sección (el correlativo) le aplica un `zfill(8)` para rellenar con ceros a la izquierda hasta asegurar una longitud estricta de 8 dígitos numéricos.
-- **Ensamblaje:** Concatena la serie formateada y el correlativo nuevamente con un guion intermedio.
+Esta función normaliza y estandariza el formato de los comprobantes de pago, transformando entradas irregulares en un formato de auditoría uniforme.
+
+- **Normalización Inicial:** 
+    - Convierte cualquier entrada a cadena de texto (string).
+    - Elimina espacios en los extremos y convierte todo el texto a mayúsculas.
+    - Si el valor es nulo o vacío, retorna una cadena vacía.
+
+- **Identificación por Expresión Regular (Patrón Principal):**
+    Utiliza el patrón `([A-Z0-9]+)[^\d]+(\d+)` para segmentar el número:
+    - **Grupo 1 (Serie):** Captura el primer bloque alfanumérico.
+    - **Separador:** Identifica cualquier carácter o conjunto de caracteres que no sean dígitos (guiones, espacios, barras, puntos)
+    - **Grupo 2 (Correlativo):** Captura el bloque numérico final.
+    
+- **Lógica de Formateo:**
+    - **Serie:** Se ajusta a la izquierda (ljust) con ceros hasta alcanzar 4 caracteres.
+    - **Correlativo:** Se rellena a la izquierda (zfill) con ceros hasta alcanzar una longitud estricta de 8 dígitos.
+- **Manejo de Contingencias (Fallback):**
+    - Si la expresión regular falla pero existe un guion (-), la función concatena todas las partes previas al último guion (eliminando espacios internos) para formar la serie y procesa la última parte como el correlativo.
+    - Si no se detecta ningún patrón conocido, retorna el valor original normalizado.
 
 **Efecto:**  
-Estandariza visual y técnicamente los números de factura (ej. "F01-123" se transforma en "F010-00000123"), manteniendo la uniformidad, pulcritud y el orden en los registros contables dentro del sistema.
+Garantiza que los registros contables mantengan una estructura rígida, independientemente de cómo hayan sido ingresados por el usuario o capturados por el sistema.
