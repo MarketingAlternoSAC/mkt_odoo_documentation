@@ -76,7 +76,6 @@ nav:
           - Res User:
               - Descripción: mkt_ocr/classes/ResUsers/index.md
               - Campos: mkt_ocr/classes/ResUsers/fields.md
-              - Funciones: mkt_ocr/classes/ResUsers/functions.md
           - Res Config Settings:
               - Descripción: mkt_ocr/classes/ResConfig/index.md
               - Campos: mkt_ocr/classes/ResConfig/fields.md

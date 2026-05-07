@@ -18,7 +18,7 @@ Actúa como cliente integral de la API del OCR, retornando una tupla con todos l
 
 ## ^^Transformación de Datos^^
 
-### `date_format(fecha_str)`
+### `date_format(fecha_str)` {#date-format}
 
 - **Diccionario de Meses:** Emplea un mapa predefinido (`meses_map`) para traducir los nombres de los meses en español (ej. "enero", "feb") a sus correspondientes valores numéricos del 1 al 12.
 - **Limpieza de Cadena:** Convierte el texto extraído del OCR a minúsculas, elimina caracteres conflictivos como puntos y limpia los espacios residuales.
@@ -30,7 +30,7 @@ Actúa como cliente integral de la API del OCR, retornando una tupla con todos l
 **Efecto:**  
 Garantiza que fechas ilegibles, caracteres extraños o formatos poco comunes detectados por el motor de visión artificial no detengan el proceso ni provoquen errores al guardar la fecha en Odoo.
 
-### `formatInvoiceNumber(numero)`
+### `formatInvoiceNumber(numero)` {#format-invoice-number}
 
 - **Validación de Serie:** Evalúa si el número de comprobante contiene el separador estándar (`-`). Si no lo tiene, retorna el número original sin alteración.
 - **Formateo de Secciones:**
