@@ -1,5 +1,3 @@
-### Descripción de la clase
-
 **Modelo técnico:** `res.users` (Extensión)
 
 Extiende el modelo principal de usuarios de Odoo para incorporar propiedades específicas relacionadas con la funcionalidad de Reconocimiento Óptico de Caracteres (OCR).

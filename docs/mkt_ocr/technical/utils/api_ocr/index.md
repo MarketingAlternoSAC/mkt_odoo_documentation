@@ -1,5 +1,3 @@
-### Descripción del módulo
-
 **Archivo técnico:** `api_ocr.py`
 
 Este archivo contiene un conjunto de funciones utilitarias (helpers) destinadas a facilitar la comunicación con el servidor externo de OCR y el procesamiento de los datos recibidos. A diferencia de las clases ubicadas en `models`, estas funciones no interactúan directamente con la base de datos de Odoo mediante el ORM, sino que se encargan de la lógica de transformación de datos, manejo de peticiones HTTP y limpieza de cadenas de texto.

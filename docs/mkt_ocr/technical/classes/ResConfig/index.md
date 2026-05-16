@@ -1,5 +1,3 @@
-### Descripción de la clase
-
 **Modelo técnico:** `res.config.settings` (Extensión)
 
 ### Uso principal

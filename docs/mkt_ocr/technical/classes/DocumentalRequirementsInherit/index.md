@@ -1,5 +1,3 @@
-### Descripción de la clase
-
 **Modelo técnico:** `documental.requirements` (Extensión)
 
 Esta clase hereda del modelo existente de requerimientos documentales (`documental.requirements`). Su objetivo es intervenir en el proceso de revisión contable, específicamente en el paso de "Control Interno".
